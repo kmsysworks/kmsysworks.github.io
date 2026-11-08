@@ -1,0 +1,151 @@
+:root{--navy:#092f61;--blue:#1260a0;--ink:#18334f;--pale:#f0f6fc}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.8}.wrap{width:min(1120px,92%);margin:auto}.header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 14px #14375812}.header-inner{display:flex;align-items:center;justify-content:space-between;min-height:86px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy)}.brand img{width:74px;height:52px;object-fit:contain}.brand strong{font-size:23px;letter-spacing:.02em}.brand small{display:block;font-family:Georgia,serif;font-size:14px;line-height:1}nav{display:flex;gap:24px}nav a{color:var(--ink);font-size:14px;font-weight:bold;text-decoration:none}nav a:hover{color:#1977c3}.menu{display:none}.hero{background:linear-gradient(90deg,#063365 0%,#063365ee 27%,#06336566 55%,#06336505 100%),url('assets/yokohama-harbor.jpg') center right/cover no-repeat;min-height:510px;color:#fff}.hero-inner{padding:90px 0}.eyebrow{font-size:17px;letter-spacing:.06em;font-weight:bold;border-bottom:1px solid #ffffff90;display:inline-block}.hero h1{font-size:clamp(30px,4vw,49px);line-height:1.5;letter-spacing:.05em;margin:10px 0 15px}.hero p{max-width:620px}.actions{display:flex;gap:15px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-block;text-decoration:none;padding:10px 24px;border-radius:6px;font-weight:bold}.btn.light{background:#fff;color:var(--navy)}.btn.outline{border:2px solid white;color:white}.section{padding:74px 0}.kicker{color:#3476ae;font-weight:bold;letter-spacing:.15em;font-size:12px;margin:0}h2{color:var(--navy);font-size:30px;margin:4px 0 10px}.intro{margin:0 0 32px;color:#51677a}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{border:1px solid #dce7f1;padding:28px;border-radius:10px;box-shadow:0 5px 22px #12385a0a}.card h3{color:var(--navy);margin:15px 0 8px}.card p{font-size:14px;margin:0}.symbol{width:53px;height:53px;border-radius:10px;display:grid;place-items:center;font-size:30px;color:white;font-weight:bold}.green{background:#128b55}.red{background:#af2b3c}.blue{background:#1763b3}.pale{background:var(--pale)}.experience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.experience-grid h3{color:var(--navy);font-size:18px}.experience-grid p{font-size:14px}.note{font-size:12px;color:#687e90}.about{display:grid;grid-template-columns:1.6fr 1fr;gap:60px;align-items:center}.about dl{display:grid;grid-template-columns:90px 1fr;gap:10px 15px;border-top:1px solid #ddd;padding-top:20px;font-size:14px}.about dt{font-weight:bold}.about dd{margin:0}.about-art{height:290px;background:linear-gradient(135deg,#eaf5ff,#8ab9de);display:grid;place-items:center;text-align:center;color:#164778;letter-spacing:.2em;border-radius:8px}.about-art b{font-size:75px;font-style:italic;letter-spacing:-.12em}.contact{text-align:center;background:#103a69;color:white}.contact h2,.contact .kicker{color:white}.contact-note{font-size:13px;color:#d2e4f5}footer{background:#082748;color:white;padding:26px 0}footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}footer span{font-size:12px}@media(max-width:760px){.header-inner{min-height:68px}.brand img{width:50px;height:39px}.brand strong{font-size:17px}.brand small{font-size:11px}.menu{display:block;background:none;border:0;font-size:25px;color:var(--navy)}nav{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:18px 5%;box-shadow:0 9px 12px #0001;flex-direction:column;gap:10px}nav.open{display:flex}.hero{background:linear-gradient(90deg,#063365ed,#063365a0),url('assets/yokohama-harbor.jpg') center/cover no-repeat;min-height:450px}.hero-inner{padding:60px 0}.eyebrow{font-size:13px}.desktop{display:none}.cards,.experience-grid,.about{grid-template-columns:1fr}.section{padding:52px 0}.about{gap:25px}h2{font-size:25px}}
+
+/* Release candidate refinements */
+html{scroll-padding-top:95px}.hero{background-position:center center}.hero-inner{padding:82px 0}.hero h1{text-shadow:0 2px 12px #001b3e66}.hero p{text-shadow:0 1px 7px #001b3e77}.about{display:block;max-width:920px}.about dl{max-width:680px}.card{background:#fff}.card:focus-within{outline:2px solid #1260a0}.contact-note{color:#d9e9f7}@media(max-width:760px){html{scroll-padding-top:72px}.hero{background-position:56% center}.hero-inner{padding:56px 0}.hero h1{font-size:clamp(29px,7vw,39px)}.hero p{font-size:14px}.brand strong{font-size:16px}}
+
+/* Approved Yokohama illustration, cropped from the accepted design (not a photograph). */
+.hero{background-image:linear-gradient(90deg,#063365 0%,#063365f0 18%,#063365b0 40%,#06336520 77%,#06336500 100%),url('assets/minatomirai-illustration.jpg');background-position:center,right center;background-size:cover,cover;background-repeat:no-repeat}
+.contact-links{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin:22px auto;font-weight:700}.contact-links a{color:white}.contact-links span{color:#e3eef9}
+@media(max-width:760px){.hero{background-image:linear-gradient(90deg,#063365f0,#063365a0),url('assets/minatomirai-illustration.jpg');background-position:center,right center}.contact-links{flex-direction:column;gap:8px}}
+
+/* Ver.4: Show the entire approved illustration without cropping. */
+.hero{background-image:linear-gradient(90deg,#063365f0 0%,#063365cc 30%,#06336555 70%,#06336522 100%),url('assets/minatomirai-illustration.jpg');background-color:#dbeaf6;background-size:100% 100%,contain;background-position:center,center;background-repeat:no-repeat}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:22px}.portfolio-card{border:1px solid #dce7f1;border-radius:10px;overflow:hidden;background:white;box-shadow:0 5px 22px #12385a0a}.portfolio-card img{display:block;width:100%;height:210px;object-fit:contain;background:#edf3f9}.portfolio-card-body{padding:18px}.portfolio-card h3{font-size:18px;color:var(--navy);margin:0 0 6px}.portfolio-card p{font-size:14px;margin:0;white-space:pre-wrap}.portfolio-section{background:#fafcff}
+@media(max-width:760px){.hero{background-image:linear-gradient(180deg,#063365c9,#063365d9),url('assets/minatomirai-illustration.jpg');background-size:100% 100%,contain;background-position:center,center;background-repeat:no-repeat;background-color:#315a81}}
+
+/* Ver.5: preserve the original illustration colors; subtle left-side shading only for text legibility. */
+.hero {
+  background-image: linear-gradient(90deg, rgba(8,45,85,.40) 0%, rgba(8,45,85,.22) 32%, rgba(8,45,85,.04) 65%, transparent 100%), url('assets/minatomirai-illustration.jpg');
+  background-size: 100% 100%, contain;
+  background-position: center, center;
+  background-repeat: no-repeat;
+  background-color: #d8edfa;
+}
+@media (max-width:760px) {
+ .hero { background-image: linear-gradient(90deg, rgba(8,45,85,.43), rgba(8,45,85,.18)), url('assets/minatomirai-illustration.jpg'); background-size:100% 100%,contain; background-color:#d8edfa; }
+}
+
+/* Ver.6: keep hero copy comfortably inside the illustration. */
+.hero-inner { padding-left: clamp(34px, 5.5vw, 88px); padding-right: 18px; }
+@media (max-width:760px) {
+  .hero-inner { padding-left: 22px; padding-right: 22px; }
+  .hero-inner p { overflow-wrap: anywhere; }
+}
+
+/* Bilingual language switch */
+nav .lang-switch{border:1px solid #bdd1e2;border-radius:5px;padding:1px 9px;white-space:nowrap}
+@media(max-width:1100px) and (min-width:761px){nav{gap:11px}nav a{font-size:12px}.brand strong{font-size:19px}}
+@media(max-width:760px){nav .lang-switch{align-self:flex-start;padding:4px 12px}}
+html[lang="en"] .hero h1{max-width:720px;letter-spacing:0.01em;font-size:clamp(29px,3.4vw,43px)}
+html[lang="en"] .hero-inner > p:not(.eyebrow){max-width:580px}
+
+/* Ver.9: English desktop header and one-line hero headlines. */
+@media (min-width: 1101px) {
+ html[lang="en"] .brand strong {font-size:30px;line-height:1.2;}
+ html[lang="en"] .hero-inner {width:min(1400px,96%);padding-left:clamp(20px,3vw,48px);padding-right:20px;}
+ html[lang="en"] .hero .eyebrow {white-space:nowrap;font-size:clamp(13px,1.15vw,17px);letter-spacing:0.01em;}
+ html[lang="en"] .hero h1 {white-space:nowrap;max-width:none;font-size:clamp(27px,2.55vw,38px);letter-spacing:0;}
+}
+@media (min-width:761px) and (max-width:1100px) {
+ html[lang="en"] .brand strong {font-size:23px;}
+ html[lang="en"] .hero-inner {width:96%;padding-left:20px;padding-right:16px;}
+ html[lang="en"] .hero .eyebrow {white-space:nowrap;font-size:clamp(11px,1.2vw,14px);letter-spacing:0;}
+ html[lang="en"] .hero h1 {white-space:nowrap;max-width:none;font-size:clamp(23px,2.65vw,29px);letter-spacing:0;}
+}
+@media (max-width:760px) {
+ html[lang="en"] .hero .eyebrow,html[lang="en"] .hero h1 {white-space:normal;overflow-wrap:normal;}
+}
+
+
+/* Ver.10: English-only hero alignment and spacing corrections.
+   Keep all hero copy inside the image/content area without negative offsets. */
+html[lang="en"] .hero-inner {
+  width: min(1120px, 92%);
+  margin-inline: auto;
+  padding: 48px 24px 66px;
+  position: relative;
+  left: auto;
+  right: auto;
+  transform: none;
+}
+html[lang="en"] .hero .eyebrow {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 12px;
+  font-size: clamp(12px, 1.05vw, 15px);
+  letter-spacing: 0;
+  line-height: 1.55;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+html[lang="en"] .hero h1 {
+  margin: 0 0 10px;
+  max-width: 100%;
+  font-size: clamp(25px, 2.5vw, 36px);
+  line-height: 1.28;
+  letter-spacing: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+html[lang="en"] .hero-inner > p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 0;
+  line-height: 1.65;
+  font-size: 15px;
+}
+html[lang="en"] .hero .actions {
+  margin-top: 52px;
+  padding-bottom: 4px;
+}
+@media (min-width: 1250px) {
+  html[lang="en"] .hero .eyebrow { white-space: nowrap; font-size: 13px; }
+  html[lang="en"] .hero h1 { white-space: nowrap; font-size: 34px; }
+}
+@media (min-width: 761px) and (max-width: 1249px) {
+  html[lang="en"] .hero-inner { padding-top: 40px; padding-bottom: 55px; }
+}
+@media (max-width: 760px) {
+  html[lang="en"] .hero-inner { width: 92%; padding: 30px 8px 44px; }
+  html[lang="en"] .hero .eyebrow { font-size: 12px; }
+  html[lang="en"] .hero h1 { font-size: clamp(25px, 6vw, 33px); }
+  html[lang="en"] .hero-inner > p:not(.eyebrow) { font-size: 14px; }
+  html[lang="en"] .hero .actions { margin-top: 34px; }
+}
+
+/* Ver.11: English hero aligns to the actual centered, contained image.
+   The image is 972x505; at a 510px hero height it is about 982px wide. */
+@media (min-width: 761px) {
+  html[lang="en"] .hero { min-height: 510px; }
+  html[lang="en"] .hero-inner {
+    width: min(920px, calc(100% - 48px));
+    height: 510px;
+    min-height: 510px;
+    margin: 0 auto;
+    padding: 26px 16px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    left: auto; right: auto; transform: none;
+  }
+  html[lang="en"] .hero .eyebrow { max-width: 100%; font-size: clamp(11px, .93vw, 14px); white-space: normal; }
+  html[lang="en"] .hero h1 { max-width: 100%; font-size: clamp(23px, 2.1vw, 33px); white-space: normal; }
+  html[lang="en"] .hero-inner > p:not(.eyebrow) { max-width: 100%; font-size: 14px; line-height: 1.7; }
+  html[lang="en"] .hero .actions { margin-top: auto; padding-bottom: 18px; }
+  html[lang="en"] .hero-nowrap { white-space: nowrap; font-size: clamp(11px, 1vw, 14px); }
+}
+@media (max-width: 760px) {
+  html[lang="en"] .hero-nowrap { white-space: normal; }
+  html[lang="en"] .hero-inner { width: 92%; margin: auto; }
+}
+
+/* Ver.12: lower English hero headline and body copy by 30px; buttons remain at waterline. */
+@media (min-width: 761px) {
+  html[lang="en"] .hero-inner { padding-top: 56px; }
+}
+
+/* Ver.13: English business details, clear label/value rows without splitting labels. */
+html[lang="en"] .en-business-details { max-width:680px; border-top:1px solid #ddd; padding-top:20px; margin-top:16px; font-size:14px; }
+html[lang="en"] .en-business-row { display:flex; align-items:baseline; gap:6px; margin-bottom:10px; flex-wrap:wrap; }
+html[lang="en"] .en-business-row strong { white-space:nowrap; flex-shrink:0; }
+html[lang="en"] .en-business-row span { min-width:0; }

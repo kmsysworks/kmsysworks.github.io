@@ -1,0 +1,1 @@
+window.KM_PORTFOLIO = [];
