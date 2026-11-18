@@ -1,4 +1,79 @@
 const menu=document.querySelector('.menu');const nav=document.querySelector('#nav');menu.addEventListener('click',()=>{const opened=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(opened));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));document.querySelector('#year').textContent=new Date().getFullYear();
 
-// Portfolio items are loaded from portfolio-data.js. No categories required.
-(()=>{const items=Array.isArray(window.KM_PORTFOLIO)?window.KM_PORTFOLIO:[];const target=document.getElementById('portfolio-list');const empty=document.getElementById('portfolio-empty');if(!target)return;empty.hidden=items.length>0;for(const item of items){if(!item||!item.title)continue;const card=document.createElement('article');card.className='portfolio-card';if(item.image){const img=document.createElement('img');img.src=item.image;img.alt=item.title;img.loading='lazy';card.appendChild(img)}const body=document.createElement('div');body.className='portfolio-card-body';const title=document.createElement('h3');title.textContent=(document.documentElement.lang==='en' && item.title_en)?item.title_en:item.title;body.appendChild(title);if(item.description){const desc=document.createElement('p');desc.textContent=(document.documentElement.lang==='en' && item.description_en)?item.description_en:item.description;body.appendChild(desc)}card.appendChild(body);target.appendChild(card)}})();
+// Both languages share the same project data.
+(() => {
+  const items = Array.isArray(window.KM_PORTFOLIO) ? window.KM_PORTFOLIO : [];
+  const english = document.documentElement.lang === 'en';
+  const assetPrefix = english ? '../' : '';
+  const projectList = document.getElementById('portfolio-list');
+  const detail = document.getElementById('project-detail');
+
+  function localized(item, key) {
+    return (english && item[key + '_en']) || item[key];
+  }
+
+  function append(parent, tag, text) {
+    const node = document.createElement(tag);
+    if (text) node.textContent = text;
+    parent.appendChild(node);
+    return node;
+  }
+
+  function addImage(parent, item) {
+    if (!item.image) return;
+    const image = append(parent, 'img');
+    image.src = assetPrefix + item.image;
+    image.alt = localized(item, 'imageAlt') || localized(item, 'title');
+    image.loading = 'lazy';
+  }
+
+  if (projectList) {
+    for (const item of items) {
+      const card = append(projectList, 'article');
+      card.className = 'portfolio-card';
+      const link = append(card, 'a');
+      link.href = 'project.html?id=' + encodeURIComponent(item.id);
+      addImage(link, item);
+      const body = append(link, 'div');
+      body.className = 'portfolio-card-body';
+      append(body, 'h3', localized(item, 'title'));
+      append(body, 'p', localized(item, 'description'));
+      append(body, 'p', item.technologies).className = 'portfolio-technology';
+      append(body, 'span', english ? 'View project →' : '詳細を見る →');
+    }
+    document.getElementById('portfolio-empty').hidden = items.length > 0;
+  }
+
+  if (detail) {
+    const id = new URLSearchParams(location.search).get('id');
+    const item = items.find(project => project.id === id);
+    const languageLink = document.querySelector('.lang-switch');
+    if (!item) {
+      languageLink.href = english ? '../index.html#portfolio' : 'en/index.html#portfolio';
+      return;
+    }
+
+    languageLink.search = new URLSearchParams({ id }).toString();
+    const title = localized(item, 'title');
+    document.title = title + ' | ' + (english ? 'KM SystemWorks' : 'KMシステムワークス');
+
+    detail.replaceChildren();
+    append(detail, 'h1', title);
+    append(detail, 'h2', english ? 'Overview' : 'システム概要');
+    append(detail, 'p', localized(item, 'description'));
+    append(detail, 'h2', english ? 'Technologies' : '使用技術');
+    append(detail, 'p', item.technologies);
+    append(detail, 'h2', english ? 'Key features' : '主な機能');
+    const features = append(detail, 'ul');
+    for (const feature of localized(item, 'features')) {
+      append(features, 'li', feature);
+    }
+    append(detail, 'h2', english ? 'Scope of work' : '担当範囲');
+    append(detail, 'p', localized(item, 'role'));
+    if (item.image) {
+      append(detail, 'h2', english ? 'Application screenshot' : 'システム画面');
+      const figure = append(detail, 'figure');
+      addImage(figure, item);
+    }
+  }
+})();
