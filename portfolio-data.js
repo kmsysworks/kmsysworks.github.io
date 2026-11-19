@@ -32,6 +32,11 @@ window.KM_PORTFOLIO = [
     imageAlt_en: "Member management screen",
     screenshots: [
       {
+        image: "assets/fx-members.png",
+        imageAlt: "会員管理画面",
+        imageAlt_en: "Member management screen",
+      },
+      {
         image: "assets/fx-agencies.png",
         imageAlt: "代理店管理画面",
         imageAlt_en: "Agency management screen",
