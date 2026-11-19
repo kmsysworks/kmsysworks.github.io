@@ -27,8 +27,25 @@ window.KM_PORTFOLIO = [
     ],
     role: "システム設計、データベース設計、アプリケーション開発、テスト。",
     role_en: "System design, database design, application development, and testing.",
-    image: "",
-    imageAlt: "",
-    imageAlt_en: "",
+    image: "assets/fx-members.png",
+    imageAlt: "会員管理画面",
+    imageAlt_en: "Member management screen",
+    screenshots: [
+      {
+        image: "assets/fx-agencies.png",
+        imageAlt: "代理店管理画面",
+        imageAlt_en: "Agency management screen",
+      },
+      {
+        image: "assets/fx-transactions.png",
+        imageAlt: "入出金管理画面",
+        imageAlt_en: "Deposit and withdrawal management screen",
+      },
+      {
+        image: "assets/fx-users.png",
+        imageAlt: "ユーザー管理画面",
+        imageAlt_en: "User management screen",
+      },
+    ],
   },
 ];

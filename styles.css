@@ -161,3 +161,6 @@ html[lang="en"] .en-business-row span { min-width:0; }
 .portfolio-detail a { color: var(--blue); }
 .portfolio-detail figure { margin: 0; }
 .portfolio-detail img { display: block; max-width: 100%; height: auto; border: 1px solid #dce7f1; border-radius: 10px; }
+
+.portfolio-detail figure + figure { margin-top: 24px; }
+.portfolio-detail figcaption { margin-top: 6px; font-size: 14px; }

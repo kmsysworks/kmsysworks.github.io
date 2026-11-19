@@ -70,10 +70,16 @@ const menu=document.querySelector('.menu');const nav=document.querySelector('#na
     }
     append(detail, 'h2', english ? 'Scope of work' : '担当範囲');
     append(detail, 'p', localized(item, 'role'));
-    if (item.image) {
-      append(detail, 'h2', english ? 'Application screenshot' : 'システム画面');
-      const figure = append(detail, 'figure');
-      addImage(figure, item);
+    const screenshots = item.screenshots ?? (item.image ? [item] : []);
+    const availableScreenshots = screenshots.filter(screenshot => screenshot?.image);
+    if (availableScreenshots.length) {
+      append(detail, 'h2', english ? 'Application screenshots' : 'システム画面');
+      for (const screenshot of availableScreenshots) {
+        const figure = append(detail, 'figure');
+        addImage(figure, screenshot);
+        const caption = localized(screenshot, 'imageAlt');
+        if (caption) append(figure, 'figcaption', caption);
+      }
     }
   }
 })();
