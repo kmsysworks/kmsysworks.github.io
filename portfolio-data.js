@@ -117,4 +117,36 @@ window.KM_PORTFOLIO = [
       }
     ]
   },
+  {
+    "id": "vehicle-crash-simulation-parameters",
+    "title": "車両衝突シミュレーション 試験条件設定システム",
+    "title_en": "Test Parameter Configuration System for Vehicle Crash Simulation",
+    "description": "車両衝突シミュレーションの試験条件をExcel上で確認・編集し、変更した条件で試験を実行できるようにしたシステムです。XMLの読み込みから試験の起動までを一連の操作にまとめ、試験条件を変更して再実行する際の手作業を減らしました。",
+    "description_en": "An Excel VBA application that lets users review and edit vehicle crash simulation parameters and run the simulation with the updated settings. It connects XML import, editing, export, and simulator launch in a single workflow, reducing manual work when changing settings and rerunning tests.",
+    "technologies": "Microsoft Excel / VBA / XML",
+    "features": [
+      "試験条件を記録したXMLファイルをVBAで解析しExcelに読み込み",
+      "座標などのパラメータをExcel上に表示し、図を参照しながら確認・編集",
+      "変更した条件をVBAでXML内に書き戻し",
+      "更新した条件でシミュレーションソフトをVBAで起動"
+    ],
+    "features_en": [
+      "Parse XML files with VBA and load the test parameters into Excel",
+      "Review and edit coordinates and other parameters in Excel with reference diagrams",
+      "Use VBA to write the updated test parameters back to the XML file",
+      "Use VBA to launch the simulator with the updated test parameters"
+    ],
+    "role": "Excel VBAアプリケーションの新規開発を単独で担当。XMLの入出力、編集画面、シミュレーションソフトの起動連携を実装。",
+    "role_en": "Sole developer of the Excel VBA application. Implemented XML import and export, the editing interface, and integration to launch the simulator.",
+    "image": "assets/project-03/workflow.png",
+    "imageAlt": "試験条件のXML取込から試験実行までの流れ（公開用の模式図）",
+    "imageAlt_en": "Workflow from XML test parameter import to simulation execution (illustration for publication)",
+    "screenshots": [
+      {
+        "image": "assets/project-03/workflow.png",
+        "imageAlt": "試験条件のXML取込から試験実行までの流れ（公開用の模式図）",
+        "imageAlt_en": "Workflow from XML test parameter import to simulation execution (illustration for publication)"
+      }
+    ]
+  },
 ];
